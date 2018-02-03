@@ -1,0 +1,8 @@
+{
+  "name": "nicoliq",
+  "app_id": "ff137023",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
