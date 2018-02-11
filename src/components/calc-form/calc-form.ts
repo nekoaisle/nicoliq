@@ -37,10 +37,14 @@ export class CalcFormComponent {
 
   onSubmit(value: string): void {
     console.log('送信された値：', value);
-    let fl = parseInt(this.flavor_ml.value);
-    let nr = parseInt(this.nico_c.value);
-    let tr = parseInt(this.liq_c.value);
-    
+    // フレーバー量
+    let fl = parseFloat(this.flavor_ml.value);
+    // ニコチン原液量
+    let nr = parseFloat(this.nico_c.value);
+    // 作成したいニコチン濃度
+    let tr = parseFloat(this.liq_c.value);
+
+    // ニコチンリキッド量
     let nl = fl * tr / (nr - tr);
 
     this.liq_ml = "" +  ((nl * nr) / tr).toFixed(1);

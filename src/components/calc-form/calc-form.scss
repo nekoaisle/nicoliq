@@ -1,6 +1,37 @@
 calc-form {
+  table {
+    width: 100%;
+  }
+
   th {
     text-align: left;
     font-weight: 400;
+  }
+  td {
+    padding: 4px 0px 4px;
+  }
+  input[type="text"] {
+    width: 4em;
+  }
+
+  button {
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+
+    margin: 0 auto;
+    display: block;
+    height: 2em;
+    width: 100%;
+    background: #008DDD;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;/* for Safari and Chrome 対応*/
+    -moz-border-radius: 5px;/* for Firefox 対応*/
+    box-shadow: 8px 8px 4px #ccc;
+  }
+
+  button:hover {
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
   }
 }
