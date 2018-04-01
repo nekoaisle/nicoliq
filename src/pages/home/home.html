@@ -7,5 +7,44 @@
 </ion-header>
 
 <ion-content padding>
-  <calc-form></calc-form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="ui form">
+    <ion-item>
+      <ion-label floating>フレーバー量(ml)</ion-label>
+      <ion-input type="number" [formControl]="form.controls['flavor_ml']"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="flavor_ml.hasError('required') && flavor_ml.touched" class="ui error message">
+      フレーバー量を入力してください。
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>ニコチン原液濃度(mg/ml)</ion-label>
+      <ion-input type="number" [formControl]="form.controls['nico_c']"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="nico_c.hasError('required') && nico_c.touched" class="ui error message">
+      ニコチン原液濃度を入力してください。
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>作成したいニコチン濃度(mg/ml)</ion-label>
+      <ion-input type="number" [formControl]="form.controls['liq_c']"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="liq_c.hasError('required') && liq_c.touched" class="ui error message">
+      作成したいニコチン濃度を入力してください。
+    </ion-item>
+
+    <ion-item>
+      <button type="submit" class="ui button">計算する</button>
+    </ion-item>
+
+    <ion-item *ngIf="nico_ml">
+      ニコチン原液量
+      <ion-badge item-end>{{nico_ml}} ml</ion-badge>
+    </ion-item>
+
+    <ion-item *ngIf="nico_ml">
+      ニコチンリキッド量
+      <ion-badge item-end>{{liq_ml}} ml</ion-badge>
+    </ion-item>
+
+  </form>
 </ion-content>

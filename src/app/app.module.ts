@@ -7,13 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CalcFormComponent } from '../components/calc-form/calc-form';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CalcFormComponent    // 追加
   ],
   imports: [
     BrowserModule,
